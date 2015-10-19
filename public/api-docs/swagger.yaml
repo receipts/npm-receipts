@@ -1,0 +1,212 @@
+swagger: "2.0"
+host: receipts.tech
+basePath: /api
+info:
+  version: 1.0.0
+  title: contests
+tags:
+  - name: tickets
+    description: Operation about contest tickets
+schemes:
+  - https
+security:
+  - oauth2token:
+    - public
+paths:
+  "/contests/{id}/tickets":
+    get:
+      tags:
+        - tickets
+      summary: Find contest tickets
+      description: Get contest tickets collection
+      operationId: getContestTicketsCollection
+      produces:
+        - application/vnd.receipts.v1+json
+        - application/vnd.receipts.v1+xml
+      security:
+        - oauth2token:
+          - contests:tickets:get
+      parameters:
+        - name: id
+          in: path
+          description: Contest id
+          required: true
+          type: string
+        - name: limit
+          description: limit
+          required: false
+          type: integer
+          in: query
+          default: 100
+        - name: offset
+          description: offset
+          required: false
+          type: integer
+          in: query
+        - name: sort
+          description: sort
+          required: false
+          type: string
+          in: query
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/ContestTicketsCollectionResponse"
+    post:
+      tags:
+        - tickets
+      summary: Create contest ticket
+      description: Create contests ticket
+      operationId: createContestTicket
+      consumes:
+        - application/vnd.receipts.v1+json
+      produces:
+        - application/vnd.receipts.v1+json
+      security:
+        - oauth2token:
+          - contests:tickets:create
+      parameters:
+        - name: id
+          in: path
+          description: Contest id
+          required: true
+          type: string
+        - in: body
+          name: ticketRequest
+          description: Ticket request
+          required: true
+          schema:
+            $ref: "#/definitions/TicketRequest"
+      responses:
+        "201":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/TicketResponse"
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "406":
+          description: The request you made is not acceptable
+        "422":
+          description: Invalid parameter value
+ 
+securityDefinitions:
+  oauth2token:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://vehicle-history.io/oauth/authorization
+    scopes:
+      public: public API scope
+      contests:tickets:get: permission to get contest tickets
+      contests:tickets:create: permission to create contest ticket
+
+definitions:
+  AmountResponse:
+    properties:
+      currency:
+        type: string
+        description: amount currency
+      value:
+        type: string
+        description: amount value
+    required:
+      - currency
+      - value
+  AgreementsRequest:
+    properties:
+      termsOfService:
+        type: boolean
+        description: terms of service agreement
+      personalDataProcessing:
+        type: boolean
+        description: personal data processing
+      useMyEffigy:
+        type: boolean
+        description: use my effigy
+    required:
+      - termsOfService
+      - personalDataProcessing
+      - useMyEffigy
+  TicketResponse:
+    properties:
+      id:
+        type: string
+        description: Id
+      purchaseOrderNumber:
+        type: string
+        description: purchase order number
+      amount:
+        $ref: "#/definitions/AmountResponse"
+        description: amount
+      date:
+        type: string
+        description: date
+      createdAt:
+        type: string
+        description: createdAt
+      updatedAt:
+        type: string
+        description: updatedAt
+    required:
+      - id
+      - purchaseOrderNumber
+      - amount
+      - date
+      - createdAt
+      - updatedAt
+  TicketRequest:
+    properties:
+      pointOfSale:
+        type: string
+        description: pointOfSale
+      purchaseOrderNumber:
+        type: string
+        description: purchase order number
+      amount:
+        $ref: "#/definitions/AmountResponse"
+        description: amount
+      date:
+        type: string
+        description: date
+      taxRegistrationNumber:
+        type: string
+        description: tax registration number
+      phone:
+        type: string
+        description: phone
+      trade:
+        type: string
+        description: Type of trade
+        default: OTHER
+        enum:
+          - OTHER
+          - HAIRDRESSING
+      agreements:
+        $ref: "#/definitions/AgreementsRequest"
+        description: agreements
+    required:
+      - pointOfSale
+      - purchaseOrderNumber
+      - amount
+      - date
+      - taxRegistrationNumber
+      - phone
+      - trade
+      - agreements
+  ContestTicketsCollectionResponse:
+    properties:
+      total:
+        type: integer
+        description: Total contest tickets collection
+      tickets:
+        type: array
+        items:
+          $ref: "#/definitions/TicketResponse"
+    description: News collection
+    required:
+      - total
+      - tickets
