@@ -3,33 +3,33 @@ host: receipts.tech
 basePath: /api
 info:
   version: 1.0.0
-  title: contests
+  title: lotteries
 tags:
   - name: tickets
-    description: Operation about contest tickets
+    description: Operation about lottery tickets
 schemes:
   - https
 security:
   - oauth2token:
     - public
 paths:
-  "/contests/{id}/tickets":
+  "/lotteries/{id}/tickets":
     get:
       tags:
         - tickets
-      summary: Find contest tickets
-      description: Get contest tickets collection
-      operationId: getContestTicketsCollection
+      summary: Find lottery tickets
+      description: Get lottery tickets collection
+      operationId: getLotteryTicketsCollection
       produces:
         - application/vnd.receipts.v1+json
         - application/vnd.receipts.v1+xml
       security:
         - oauth2token:
-          - contests:tickets:get
+          - lotteries:tickets:get
       parameters:
         - name: id
           in: path
-          description: Contest id
+          description: Lottery id
           required: true
           type: string
         - name: limit
@@ -52,24 +52,24 @@ paths:
         "200":
           description: successful operation
           schema:
-            $ref: "#/definitions/ContestTicketsCollectionResponse"
+            $ref: "#/definitions/LotteryTicketsCollectionResponse"
     post:
       tags:
         - tickets
-      summary: Create contest ticket
-      description: Create contests ticket
-      operationId: createContestTicket
+      summary: Create lottery ticket
+      description: Create lotteries ticket
+      operationId: createLotteryTicket
       consumes:
         - application/vnd.receipts.v1+json
       produces:
         - application/vnd.receipts.v1+json
       security:
         - oauth2token:
-          - contests:tickets:create
+          - lotteries:tickets:create
       parameters:
         - name: id
           in: path
-          description: Contest id
+          description: Lottery id
           required: true
           type: string
         - in: body
@@ -101,8 +101,8 @@ securityDefinitions:
     authorizationUrl: https://vehicle-history.io/oauth/authorization
     scopes:
       public: public API scope
-      contests:tickets:get: permission to get contest tickets
-      contests:tickets:create: permission to create contest ticket
+      lotteries:tickets:get: permission to get lottery tickets
+      lotteries:tickets:create: permission to create lottery ticket
 
 definitions:
   AmountResponse:
@@ -162,7 +162,7 @@ definitions:
     properties:
       pointOfSale:
         type: string
-        description: pointOfSale
+        description: point of sale
       purchaseOrderNumber:
         type: string
         description: purchase order number
@@ -188,6 +188,9 @@ definitions:
       agreements:
         $ref: "#/definitions/AgreementsRequest"
         description: agreements
+      email:
+        type: string
+        description: email
     required:
       - pointOfSale
       - purchaseOrderNumber
@@ -197,16 +200,17 @@ definitions:
       - phone
       - trade
       - agreements
-  ContestTicketsCollectionResponse:
+      - email
+  LotteryTicketsCollectionResponse:
     properties:
       total:
         type: integer
-        description: Total contest tickets collection
+        description: Total lottery tickets collection
       tickets:
         type: array
         items:
           $ref: "#/definitions/TicketResponse"
-    description: News collection
+    description: Lottery tickets collection
     required:
       - total
       - tickets

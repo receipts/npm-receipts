@@ -5,18 +5,18 @@
   "main": "./lib/receipts.js",
   "dependencies": {
     "assert-plus": "^0.1.5",
-    "async": "^1.4.2",
+    "async": "^1.5.0",
     "config": "^1.16.0",
     "keen-js": "^3.2.7",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#f79c698bfad002584d8c3359f7284594d0de1616",
-    "newrelic": "^1.22.2",
-    "receipts-model": "receipts/npm-receipts-model#34edd5d36b993c7f9485787a25797478297eee4a",
-    "winston": "^1.1.1",
-    "winston-loggly": "^1.1.0"
+    "newrelic": "^1.23.0",
+    "receipts-model": "0.5.1",
+    "winston": "^1.1.2",
+    "winston-loggly": "^1.2.0"
   },
   "devDependencies": {
-    "chai": "^3.3.0",
+    "chai": "^3.4.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
     "rewire": "^2.3.4"
