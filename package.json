@@ -1,6 +1,6 @@
 {
   "name": "receipts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "receipts",
   "main": "./lib/receipts.js",
   "dependencies": {
@@ -12,7 +12,7 @@
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#f79c698bfad002584d8c3359f7284594d0de1616",
     "newrelic": "^1.23.0",
-    "receipts-lottery-client": "receipts/npm-receipts-lottery-client#e547b42bee7841a81347f809b6ef945688867b62",
+    "receipts-lottery-client": "0.5.1",
     "receipts-model": "0.5.1",
     "winston": "^1.1.2",
     "winston-loggly": "^1.2.0"
@@ -49,6 +49,6 @@
     "node": ">=0.10.0"
   },
   "readmeFilename": "README.md",
-  "_id": "receipts@0.1.0",
-  "_from": "receipts@^0.1.0"
+  "_id": "receipts@0.1.1",
+  "_from": "receipts@^0.1.1"
 }
