@@ -22,11 +22,13 @@ npm test
 
 - [assert-plus](https://github.com/mcavage/node-assert-plus): Extra assertions on top of node&#39;s assert module
 - [async](): Higher-order functions and common patterns for asynchronous code
+- [cheerio](https://github.com/cheeriojs/cheerio): Tiny, fast, and elegant implementation of core jQuery designed specifically for the server
 - [config](https://github.com/lorenwest/node-config): Configuration control for production node deployments
 - [keen-js](https://github.com/keen/keen-js): **Important:** v3.2.0 introduced several breaking changes from previous versions. Check out the [Changelog](./CHANGELOG.md#3.2.0) before upgrading.
 - [moment](https://github.com/moment/moment): Parse, validate, manipulate, and display dates
 - [my-restify-api](): My restify API backend
 - [newrelic](): New Relic agent
+- [receipts-lottery-client](): Receipts lottery client
 - [receipts-model](): Receipts model.
 - [winston](): A multi-transport async logging library for Node.js
 - [winston-loggly](https://github.com/indexzero/winston-loggly): A Loggly transport for winston

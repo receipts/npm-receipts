@@ -6,11 +6,13 @@
   "dependencies": {
     "assert-plus": "^0.1.5",
     "async": "^1.5.0",
+    "cheerio": "^0.19.0",
     "config": "^1.16.0",
     "keen-js": "^3.2.7",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#f79c698bfad002584d8c3359f7284594d0de1616",
     "newrelic": "^1.23.0",
+    "receipts-lottery-client": "receipts/npm-receipts-lottery-client#e547b42bee7841a81347f809b6ef945688867b62",
     "receipts-model": "0.5.1",
     "winston": "^1.1.2",
     "winston-loggly": "^1.2.0"
