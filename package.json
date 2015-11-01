@@ -14,7 +14,7 @@
     "newrelic": "^1.23.0",
     "receipts-lottery-client": "0.5.3",
     "receipts-model": "0.5.2",
-    "winston": "^1.1.2",
+    "winston": "^2.0.0",
     "winston-loggly": "^1.2.0"
   },
   "devDependencies": {
