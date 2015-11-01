@@ -135,49 +135,41 @@ definitions:
     properties:
       id:
         type: string
-        description: Id
+        description: Ticekt id
+      code:
+        type: string
+        description: ticket code number
       purchaseOrderNumber:
         type: string
-        description: purchase order number
+        description: ticket purchase order number
       amount:
         $ref: "#/definitions/AmountResponse"
-        description: amount
+        description: ticket amount
       date:
         type: string
-        description: date
-      createdAt:
-        type: string
-        description: createdAt
-      updatedAt:
-        type: string
-        description: updatedAt
+        description: ticket generate date
     required:
       - id
       - purchaseOrderNumber
       - amount
       - date
-      - createdAt
-      - updatedAt
   TicketRequest:
     properties:
       pointOfSale:
         type: string
-        description: point of sale
+        description: ticket point of sale
       purchaseOrderNumber:
         type: string
-        description: purchase order number
+        description: ticket purchase order number
       amount:
         $ref: "#/definitions/AmountResponse"
-        description: amount
+        description: ticket amount
       date:
         type: string
-        description: date
+        description: ticket generate date
       taxRegistrationNumber:
         type: string
-        description: tax registration number
-      phone:
-        type: string
-        description: phone
+        description: ticket tax registration number
       trade:
         type: string
         description: Type of trade
@@ -185,20 +177,23 @@ definitions:
         enum:
           - OTHER
           - HAIRDRESSING
+      phone:
+        type: string
+        description: user phone
       agreements:
         $ref: "#/definitions/AgreementsRequest"
-        description: agreements
+        description: user agreements
       email:
         type: string
-        description: email
+        description: user email
     required:
       - pointOfSale
       - purchaseOrderNumber
       - amount
       - date
       - taxRegistrationNumber
-      - phone
       - trade
+      - phone
       - agreements
       - email
   LotteryTicketsCollectionResponse:

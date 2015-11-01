@@ -12,8 +12,8 @@
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#f79c698bfad002584d8c3359f7284594d0de1616",
     "newrelic": "^1.23.0",
-    "receipts-lottery-client": "0.5.3",
-    "receipts-model": "0.5.2",
+    "receipts-lottery-client": "0.5.4",
+    "receipts-model": "0.5.3",
     "winston": "^2.0.0",
     "winston-loggly": "^1.2.0"
   },
