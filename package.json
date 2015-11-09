@@ -8,6 +8,8 @@
     "async": "^1.5.0",
     "cheerio": "^0.19.0",
     "config": "^1.16.0",
+    "email-validator": "^1.0.3",
+    "identification-numbers": "0.0.7",
     "keen-js": "^3.2.7",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#79f07871356d31c69482242c71c2a09995a3d463",
