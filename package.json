@@ -10,20 +10,20 @@
     "config": "^1.16.0",
     "email-validator": "^1.0.3",
     "identification-numbers": "0.0.7",
-    "keen-js": "^3.2.7",
+    "keen-js": "^3.3.0",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#79f07871356d31c69482242c71c2a09995a3d463",
-    "newrelic": "^1.23.0",
+    "newrelic": "^1.23.1",
     "receipts-lottery-client": "0.5.4",
-    "receipts-model": "0.5.3",
-    "winston": "^2.0.0",
+    "receipts-model": "0.5.4",
+    "winston": "^2.1.0",
     "winston-loggly": "^1.2.0"
   },
   "devDependencies": {
-    "chai": "^3.4.0",
+    "chai": "^3.4.1",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
-    "rewire": "^2.3.4"
+    "rewire": "^2.4.0"
   },
   "scripts": {
     "prepublish": "npm prune",
