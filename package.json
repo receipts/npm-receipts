@@ -1,6 +1,6 @@
 {
   "name": "receipts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "receipts",
   "main": "./lib/receipts.js",
   "dependencies": {
@@ -50,6 +50,6 @@
     "node": ">=0.10.0"
   },
   "readmeFilename": "README.md",
-  "_id": "receipts@0.1.1",
-  "_from": "receipts@^0.1.1"
+  "_id": "receipts@0.1.2",
+  "_from": "receipts@^0.1.2"
 }
