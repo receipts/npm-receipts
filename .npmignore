@@ -11,3 +11,4 @@ test/
 *.iws
 .idea
 config/runtime.json
+config/runtimes.json
