@@ -9,6 +9,8 @@ tags:
     description: Operation about lottery tickets
   - name: trades
     description: Operation about lottery trades
+  - name: results
+    description: Operation about lottery results
 schemes:
   - https
 security:
@@ -27,7 +29,7 @@ paths:
         - application/vnd.receipts.v1+xml
       security:
         - oauth2token:
-          - lotteries:tickets:get
+          - lotteries:trades:get
       parameters:
         - name: id
           in: path
@@ -39,6 +41,30 @@ paths:
           description: successful operation
           schema:
             $ref: "#/definitions/LotteryTradesCollectionResponse"
+  "/lotteries/{id}/results":
+    get:
+      tags:
+        - results
+      summary: Get lottery results
+      description: Get lottery results
+      operationId: getLotteryResultsCollection
+      produces:
+        - application/vnd.receipts.v1+json
+        - application/vnd.receipts.v1+xml
+      security:
+        - oauth2token:
+          - lotteries:results:get
+      parameters:
+        - name: id
+          in: path
+          description: Lottery id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/LotteryResultsCollectionResponse"
   "/lotteries/{id}/tickets":
     get:
       tags:
@@ -129,6 +155,8 @@ securityDefinitions:
       public: public API scope
       lotteries:tickets:get: permission to get lottery tickets
       lotteries:tickets:create: permission to create lottery ticket
+      lotteries:trades:get: permission to get lottery trades
+      lotteries:results:get: permission to get lottery results
 
 definitions:
   AmountResponse:
@@ -226,9 +254,10 @@ definitions:
     properties:
       total:
         type: integer
-        description: Total lottery tickets collection
+        description: Total lottery tickets
       tickets:
         type: array
+        description: Lottery tickets collection
         items:
           $ref: "#/definitions/TicketResponse"
     description: Lottery tickets collection
@@ -251,12 +280,74 @@ definitions:
     properties:
       total:
         type: integer
-        description: Total lottery tickets collection
+        description: Total lottery trades
       trades:
         type: array
+        description: Trades collection
         items:
           $ref: "#/definitions/TradeResponse"
     description: Lottery trades collection
     required:
       - total
       - trades
+  ResultPrizeWinnerResponse:
+    properties:
+      code:
+        type: string
+        description: Winner code
+    required:
+      - code
+  ResultPrizeResponse:
+    properties:
+      name:
+        type: string
+        description: Prize name
+      winners:
+        type: array
+        description: Prize winners
+        items:
+          $ref: "#/definitions/ResultPrizeWinnerResponse"
+    required:
+      - name
+      - winners
+  ResultResponse:
+    properties:
+      name:
+        type: string
+        description: Result name
+      date:
+        type: string
+        description: Result date
+      status:
+        type: string
+        description: Result status
+        default: ACTIVE
+        enum:
+          - ACTIVE
+          - PENDING
+          - FINISHED
+      prizes:
+        type: array
+        description: Result prizes
+        items:
+          $ref: "#/definitions/ResultPrizeResponse"
+    description: Lottery results data
+    required:
+      - name
+      - date
+      - status
+      - prizes
+  LotteryResultsCollectionResponse:
+    properties:
+      total:
+        type: integer
+        description: Total lottery results
+      results:
+        type: array
+        description: Lottery results collection
+        items:
+          $ref: "#/definitions/ResultResponse"
+    description: Lottery results collection
+    required:
+      - total
+      - results
