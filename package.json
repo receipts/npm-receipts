@@ -6,23 +6,23 @@
   "dependencies": {
     "assert-plus": "^0.2.0",
     "async": "^1.5.0",
-    "config": "^1.16.0",
+    "config": "^1.17.1",
     "email-validator": "^1.0.3",
     "identification-numbers": "0.0.7",
-    "keen-js": "^3.3.0",
+    "keen-js": "^3.4.0-rc",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#69bd4cdb9ad2aec5e9a9702dd1233677c2021958",
-    "newrelic": "^1.23.1",
+    "newrelic": "^1.24.0",
     "receipts-lottery-client": "0.5.7",
     "receipts-model": "0.5.9",
-    "winston": "^2.1.0",
+    "winston": "^2.1.1",
     "winston-loggly": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.3.3",
-    "rewire": "^2.4.0"
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "rewire": "^2.5.1"
   },
   "scripts": {
     "prepublish": "npm prune",
