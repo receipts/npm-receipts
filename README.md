@@ -6,7 +6,7 @@
 [![Dependency Status](https://david-dm.org/receipts/npm-receipts.svg)](https://david-dm.org/receipts/npm-receipts)
 [![devDependency Status](https://david-dm.org/receipts/npm-receipts/dev-status.svg)](https://david-dm.org/receipts/npm-receipts#info=devDependencies)
 
-receipts
+receipts - your receipts in one place
 
 ## Installation
 
