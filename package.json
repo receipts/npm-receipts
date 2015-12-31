@@ -12,9 +12,9 @@
     "keen-js": "^3.4.0-rc2",
     "moment": "^2.10.6",
     "my-restify-api": "Zenedith/npm-my-restify-api#69bd4cdb9ad2aec5e9a9702dd1233677c2021958",
-    "newrelic": "^1.24.0",
-    "receipts-lottery-client": "0.5.10",
-    "receipts-model": "0.5.10",
+    "newrelic": "^1.24.1",
+    "receipts-lottery-client": "0.5.11",
+    "receipts-model": "0.5.11",
     "winston": "^2.1.1",
     "winston-loggly": "^1.2.0"
   },

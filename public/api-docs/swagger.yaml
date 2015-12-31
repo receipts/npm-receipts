@@ -231,6 +231,7 @@ definitions:
         enum:
           - OTHER
           - HAIRDRESSING
+          - PRIVATE_MEDIC_DENTAL
       phone:
         type: string
         description: user phone
