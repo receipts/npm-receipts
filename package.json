@@ -5,13 +5,13 @@
   "main": "./lib/receipts.js",
   "dependencies": {
     "assert-plus": "^0.2.0",
-    "async": "^1.5.0",
-    "config": "^1.17.1",
+    "async": "^1.5.2",
+    "config": "^1.19.0",
     "email-validator": "^1.0.3",
     "identification-numbers": "0.0.7",
     "keen-js": "^3.4.0-rc2",
-    "moment": "^2.10.6",
-    "my-restify-api": "Zenedith/npm-my-restify-api#69bd4cdb9ad2aec5e9a9702dd1233677c2021958",
+    "moment": "^2.11.1",
+    "my-restify-api": "0.5.12",
     "newrelic": "^1.24.1",
     "receipts-lottery-client": "0.5.11",
     "receipts-model": "0.5.11",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "istanbul": "^0.4.1",
+    "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "rewire": "^2.5.1"
   },
