@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "cz-conventional-changelog": "1.1.5",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "rewire": "^2.5.1",
@@ -53,5 +54,10 @@
   },
   "readmeFilename": "README.md",
   "_id": "receipts@0.1.4",
-  "_from": "receipts@^0.1.4"
+  "_from": "receipts@^0.1.4",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
