@@ -22,13 +22,15 @@
     "chai": "^3.4.1",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
-    "rewire": "^2.5.1"
+    "rewire": "^2.5.1",
+    "semantic-release": "^4.3.5"
   },
   "scripts": {
     "prepublish": "npm prune",
     "test": "mocha --recursive test",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --recursive test",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --recursive test"
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --recursive test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
