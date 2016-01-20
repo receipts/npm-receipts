@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/receipts/npm-receipts.svg)](https://travis-ci.org/receipts/npm-receipts)
 [![Dependency Status](https://david-dm.org/receipts/npm-receipts.svg)](https://david-dm.org/receipts/npm-receipts)
 [![devDependency Status](https://david-dm.org/receipts/npm-receipts/dev-status.svg)](https://david-dm.org/receipts/npm-receipts#info=devDependencies)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 receipts - your receipts in one place
 
