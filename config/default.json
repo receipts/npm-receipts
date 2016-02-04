@@ -3,10 +3,17 @@
     "license_key": "",
     "logging": "info"
   },
-  "form": {
+  "main-request": {
     "url": "https://",
-    "postUrlHost": "",
-    "postUrlRegex": "",
+    "timeout": 5000,
+    "headers": {
+      "User-Agent": "",
+      "Origin": "",
+      "Referer": ""
+    }
+  },
+  "tickets-request": {
+    "url": "https://",
     "timeout": 5000,
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -14,11 +21,38 @@
       "Origin": "",
       "Referer": "",
       "X-Requested-With": "XMLHttpRequest"
-    },
-    "fields": [
-    ]
+    }
   },
-  "captcha": {
+  "auth-request": {
+    "url": "https://",
+    "timeout": 5000,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "User-Agent": "",
+      "Origin": "",
+      "Referer": "",
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  },
+  "account-request": {
+    "url": "https://",
+    "timeout": 5000,
+    "headers": {
+      "User-Agent": "",
+      "Origin": "",
+      "Referer": ""
+    }
+  },
+  "results-request": {
+    "url": "https://",
+    "timeout": 5000,
+    "headers": {
+      "User-Agent": "",
+      "Origin": "",
+      "Referer": ""
+    }
+  },
+  "captcha-request": {
     "url": "",
     "timeout": 5000,
     "headers": {
