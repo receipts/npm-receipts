@@ -145,7 +145,81 @@ paths:
           description: The request you made is not acceptable
         "422":
           description: Invalid parameter value
- 
+  "/lotteries/{id}/tickets/{ticketId}":
+    get:
+      tags:
+        - tickets
+      summary: Get lottery ticket by id
+      description: Get lottery ticket by id
+      operationId: getLotteryTicket
+      produces:
+        - application/vnd.receipts.v1+json
+        - application/vnd.receipts.v1+xml
+      security:
+        - oauth2token:
+          - lotteries:tickets:get
+      parameters:
+        - name: id
+          in: path
+          description: Lottery id
+          required: true
+          type: string
+        - name: ticketId
+          in: path
+          description: Ticket id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/TicketDetailsResponse"
+    put:
+      tags:
+        - tickets
+      summary: Update lottery ticket
+      description: Update lotteries ticket
+      operationId: updateLotteryTicket
+      consumes:
+        - application/vnd.receipts.v1+json
+      produces:
+        - application/vnd.receipts.v1+json
+      security:
+        - oauth2token:
+          - lotteries:tickets:update
+      parameters:
+        - name: id
+          in: path
+          description: Lottery id
+          required: true
+          type: string
+        - name: ticketId
+          in: path
+          description: Ticket id
+          required: true
+          type: string
+        - in: body
+          name: ticketRequest
+          description: Ticket request
+          required: true
+          schema:
+            $ref: "#/definitions/UpdateTicketRequest"
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/TicketDetailsResponse"
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "406":
+          description: The request you made is not acceptable
+        "422":
+          description: Invalid parameter value
+
 securityDefinitions:
   oauth2token:
     type: oauth2
@@ -155,6 +229,7 @@ securityDefinitions:
       public: public API scope
       lotteries:tickets:get: permission to get lottery tickets
       lotteries:tickets:create: permission to create lottery ticket
+      lotteries:tickets:update: permission to update lottery ticket
       lotteries:trades:get: permission to get lottery trades
       lotteries:results:get: permission to get lottery results
 
@@ -185,6 +260,77 @@ definitions:
       - termsOfService
       - personalDataProcessing
       - useMyEffigy
+  TicketDetailsResponse:
+    properties:
+      id:
+        type: string
+        description: Ticekt id
+      code:
+        type: string
+        description: ticket code number
+      purchaseOrderNumber:
+        type: string
+        description: ticket purchase order number
+      amount:
+        $ref: "#/definitions/AmountResponse"
+        description: ticket amount
+      date:
+        type: string
+        description: ticket generate date
+      pointOfSale:
+        type: string
+        description: ticket point of sale
+      taxRegistrationNumber:
+        type: string
+        description: ticket tax registration number
+      trade:
+        type: string
+        description: Type of trade
+        default: OTHER
+        enum:
+          - OTHER
+          - HAIRDRESSING
+          - PRIVATE_MEDIC_DENTAL
+    required:
+      - id
+      - purchaseOrderNumber
+      - amount
+      - date
+      - pointOfSale
+      - taxRegistrationNumber
+      - trade
+  UpdateTicketRequest:
+    properties:
+      purchaseOrderNumber:
+        type: string
+        description: ticket purchase order number
+      amount:
+        $ref: "#/definitions/AmountResponse"
+        description: ticket amount
+      date:
+        type: string
+        description: ticket generate date
+      pointOfSale:
+        type: string
+        description: ticket point of sale
+      taxRegistrationNumber:
+        type: string
+        description: ticket tax registration number
+      trade:
+        type: string
+        description: Type of trade
+        default: OTHER
+        enum:
+          - OTHER
+          - HAIRDRESSING
+          - PRIVATE_MEDIC_DENTAL
+    required:
+      - purchaseOrderNumber
+      - amount
+      - date
+      - pointOfSale
+      - taxRegistrationNumber
+      - trade
   TicketResponse:
     properties:
       id:
