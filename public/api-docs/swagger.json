@@ -419,6 +419,10 @@
           "type": "string",
           "description": "ticket generate date"
         },
+        "special": {
+          "type": "boolean",
+          "description": "is special ticket"
+        },
         "pointOfSale": {
           "type": "string",
           "description": "ticket point of sale"
@@ -443,6 +447,7 @@
         "purchaseOrderNumber",
         "amount",
         "date",
+        "special",
         "pointOfSale",
         "taxRegistrationNumber",
         "trade"
@@ -511,13 +516,18 @@
         "date": {
           "type": "string",
           "description": "ticket generate date"
+        },
+        "special": {
+          "type": "boolean",
+          "description": "is special ticket"
         }
       },
       "required": [
         "id",
         "purchaseOrderNumber",
         "amount",
-        "date"
+        "date",
+        "special"
       ]
     },
     "TicketRequest": {
