@@ -277,6 +277,9 @@ definitions:
       date:
         type: string
         description: ticket generate date
+      special:
+        type: boolean
+        description: is special ticket
       pointOfSale:
         type: string
         description: ticket point of sale
@@ -296,6 +299,7 @@ definitions:
       - purchaseOrderNumber
       - amount
       - date
+      - special
       - pointOfSale
       - taxRegistrationNumber
       - trade
@@ -348,11 +352,15 @@ definitions:
       date:
         type: string
         description: ticket generate date
+      special:
+        type: boolean
+        description: is special ticket
     required:
       - id
       - purchaseOrderNumber
       - amount
       - date
+      - special
   TicketRequest:
     properties:
       pointOfSale:
