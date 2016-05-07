@@ -4,6 +4,7 @@ basePath: /api
 info:
   version: 1.0.0
   title: receipts-lotteries
+  description: receipts.tech
 tags:
   - name: tickets
     description: Operation about lottery tickets
