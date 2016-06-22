@@ -1,6 +1,6 @@
 {
   "name": "receipts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "receipts",
   "main": "./lib/receipts.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "identification-numbers": "0.0.7",
     "keen-js": "3.4.1",
     "moment": "2.13.0",
-    "my-restify-api": "0.6.2",
+    "my-restify-api": "0.6.3",
     "newrelic": "1.28.1",
     "receipts-lottery-client": "1.2.1",
     "receipts-model": "1.4.0",
@@ -46,9 +46,9 @@
   "license": "MIT",
   "homepage": "https://github.com/receipts/npm-receipts",
   "engines": {
-    "node": ">=5.10.0"
+    "node": ">=6.2.0"
   },
   "readmeFilename": "README.md",
-  "_id": "receipts@1.1.1",
-  "_from": "receipts@^1.1.1"
+  "_id": "receipts@1.1.2",
+  "_from": "receipts@^1.1.2"
 }
