@@ -1,20 +1,20 @@
 {
   "name": "receipts",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "receipts",
   "main": "./lib/receipts.js",
   "dependencies": {
     "assert-plus": "1.0.0",
-    "async": "1.5.2",
+    "async": "2.0.1",
     "config": "1.21.0",
     "email-validator": "1.0.4",
     "identification-numbers": "0.0.7",
     "keen-js": "3.4.1",
     "moment": "2.14.1",
     "my-restify-api": "0.6.3",
-    "newrelic": "1.28.2",
-    "receipts-lottery-client": "1.2.1",
-    "receipts-model": "1.5.0",
+    "newrelic": "1.28.3",
+    "receipts-lottery-client": "1.2.2",
+    "receipts-model": "1.5.1",
     "winston": "2.2.0",
     "winston-loggly": "1.3.1"
   },
@@ -49,6 +49,6 @@
     "node": ">=6.2.0"
   },
   "readmeFilename": "README.md",
-  "_id": "receipts@1.1.2",
-  "_from": "receipts@^1.1.2"
+  "_id": "receipts@1.1.3",
+  "_from": "receipts@^1.1.3"
 }
