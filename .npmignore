@@ -12,5 +12,6 @@ test/
 .idea
 config/runtime.json
 config/runtimes.json
+config/test.json
 newrelic_agent.log
 release.sh
