@@ -12,7 +12,7 @@
     "keen-js": "3.4.1",
     "moment": "2.15.1",
     "my-restify-api": "0.6.3",
-    "newrelic": "1.30.4",
+    "newrelic": "1.30.5",
     "receipts-lottery-client": "1.4.0",
     "receipts-model": "1.6.0",
     "winston": "2.2.0",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "chai": "3.5.0",
     "istanbul": "0.4.5",
-    "mocha": "3.1.0"
+    "mocha": "3.1.2"
   },
   "scripts": {
     "prepublish": "npm prune",
