@@ -412,8 +412,7 @@
           "description": "ticket purchase order number"
         },
         "amount": {
-          "$ref": "#/definitions/AmountResponse",
-          "description": "ticket amount"
+          "$ref": "#/definitions/AmountResponse"
         },
         "date": {
           "type": "string",
@@ -460,8 +459,7 @@
           "description": "ticket purchase order number"
         },
         "amount": {
-          "$ref": "#/definitions/AmountResponse",
-          "description": "ticket amount"
+          "$ref": "#/definitions/AmountResponse"
         },
         "date": {
           "type": "string",
@@ -510,8 +508,7 @@
           "description": "ticket purchase order number"
         },
         "amount": {
-          "$ref": "#/definitions/AmountResponse",
-          "description": "ticket amount"
+          "$ref": "#/definitions/AmountResponse"
         },
         "date": {
           "type": "string",
@@ -542,7 +539,6 @@
         },
         "amount": {
           "$ref": "#/definitions/AmountResponse",
-          "description": "ticket amount"
         },
         "date": {
           "type": "string",
@@ -567,8 +563,7 @@
           "description": "user phone"
         },
         "agreements": {
-          "$ref": "#/definitions/AgreementsRequest",
-          "description": "user agreements"
+          "$ref": "#/definitions/AgreementsRequest"
         },
         "email": {
           "type": "string",
@@ -595,7 +590,6 @@
         },
         "tickets": {
           "type": "array",
-          "description": "Lottery tickets collection",
           "items": {
             "$ref": "#/definitions/TicketResponse"
           }
@@ -632,7 +626,6 @@
         },
         "trades": {
           "type": "array",
-          "description": "Trades collection",
           "items": {
             "$ref": "#/definitions/TradeResponse"
           }
@@ -663,7 +656,6 @@
         },
         "winners": {
           "type": "array",
-          "description": "Prize winners",
           "items": {
             "$ref": "#/definitions/ResultPrizeWinnerResponse"
           }
@@ -696,7 +688,6 @@
         },
         "prizes": {
           "type": "array",
-          "description": "Result prizes",
           "items": {
             "$ref": "#/definitions/ResultPrizeResponse"
           }
@@ -718,7 +709,6 @@
         },
         "results": {
           "type": "array",
-          "description": "Lottery results collection",
           "items": {
             "$ref": "#/definitions/ResultResponse"
           }
