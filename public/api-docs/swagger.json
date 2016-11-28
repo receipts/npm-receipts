@@ -23,13 +23,6 @@
   "schemes": [
     "https"
   ],
-  "security": [
-    {
-      "oauth2token": [
-        "public"
-      ]
-    }
-  ],
   "paths": {
     "/lotteries/{id}/trades": {
       "get": {
@@ -45,7 +38,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:trades:get"
             ]
           }
@@ -56,6 +49,7 @@
             "in": "path",
             "description": "Lottery id",
             "required": true,
+            "default": "12",
             "type": "string"
           }
         ],
@@ -83,7 +77,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:results:get"
             ]
           }
@@ -93,6 +87,7 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
+            "default": "12",
             "required": true,
             "type": "string"
           }
@@ -121,7 +116,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:get"
             ]
           }
@@ -131,6 +126,7 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
+            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -147,7 +143,8 @@
             "description": "offset",
             "required": false,
             "type": "integer",
-            "in": "query"
+            "in": "query",
+            "default": 0
           },
           {
             "name": "sort",
@@ -181,7 +178,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:create"
             ]
           }
@@ -191,6 +188,7 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
+            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -243,7 +241,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:get"
             ]
           }
@@ -253,6 +251,7 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
+            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -260,6 +259,7 @@
             "name": "ticketId",
             "in": "path",
             "description": "Ticket id",
+            "default": "122",
             "required": true,
             "type": "string"
           }
@@ -288,7 +288,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:update"
             ]
           }
@@ -298,6 +298,7 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
+            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -305,6 +306,7 @@
             "name": "ticketId",
             "in": "path",
             "description": "Ticket id",
+            "default": "122",
             "required": true,
             "type": "string"
           },
@@ -345,12 +347,11 @@
     }
   },
   "securityDefinitions": {
-    "oauth2token": {
+    "bearerToken": {
       "type": "oauth2",
       "flow": "implicit",
-      "authorizationUrl": "https://vehicle-history.io/oauth/authorization",
+      "authorizationUrl": "https://receipts.tech/oauth/authorization",
       "scopes": {
-        "public": "public API scope",
         "lotteries:tickets:get": "permission to get lottery tickets",
         "lotteries:tickets:create": "permission to create lottery ticket",
         "lotteries:tickets:update": "permission to update lottery ticket",
@@ -437,6 +438,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         }
@@ -480,6 +484,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         }
@@ -538,7 +545,7 @@
           "description": "ticket purchase order number"
         },
         "amount": {
-          "$ref": "#/definitions/AmountResponse",
+          "$ref": "#/definitions/AmountResponse"
         },
         "date": {
           "type": "string",
@@ -555,6 +562,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         },
