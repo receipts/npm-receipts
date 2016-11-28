@@ -23,13 +23,6 @@
   "schemes": [
     "https"
   ],
-  "security": [
-    {
-      "oauth2token": [
-        "public"
-      ]
-    }
-  ],
   "paths": {
     "/lotteries/{id}/trades": {
       "get": {
@@ -45,7 +38,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:trades:get"
             ]
           }
@@ -83,7 +76,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:results:get"
             ]
           }
@@ -121,7 +114,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:get"
             ]
           }
@@ -181,7 +174,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:create"
             ]
           }
@@ -243,7 +236,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:get"
             ]
           }
@@ -288,7 +281,7 @@
         ],
         "security": [
           {
-            "oauth2token": [
+            "bearerToken": [
               "lotteries:tickets:update"
             ]
           }
@@ -345,12 +338,11 @@
     }
   },
   "securityDefinitions": {
-    "oauth2token": {
+    "bearerToken": {
       "type": "oauth2",
       "flow": "implicit",
-      "authorizationUrl": "https://vehicle-history.io/oauth/authorization",
+      "authorizationUrl": "https://receipts.tech/oauth/authorization",
       "scopes": {
-        "public": "public API scope",
         "lotteries:tickets:get": "permission to get lottery tickets",
         "lotteries:tickets:create": "permission to create lottery ticket",
         "lotteries:tickets:update": "permission to update lottery ticket",
@@ -437,6 +429,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         }
@@ -480,6 +475,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         }
@@ -538,7 +536,7 @@
           "description": "ticket purchase order number"
         },
         "amount": {
-          "$ref": "#/definitions/AmountResponse",
+          "$ref": "#/definitions/AmountResponse"
         },
         "date": {
           "type": "string",
@@ -555,6 +553,9 @@
           "enum": [
             "OTHER",
             "HAIRDRESSING",
+            "VEHICLES",
+            "FOOD_AND_DRINKS",
+            "TAXI",
             "PRIVATE_MEDIC_DENTAL"
           ]
         },
