@@ -2,327 +2,318 @@
   swagger: '2.0'
   host: receipts.tech
   basePath: /api
-  info: 
+  info:
     version: '1.0.0'
     title: receipts-lotteries
-  tags: 
-    - 
+  tags:
+    -
       name: tickets
       description: Operation about lottery tickets
-    - 
+    -
       name: trades
       description: Operation about lottery trades
-    - 
+    -
       name: results
       description: Operation about lottery results
-  schemes: 
+  schemes:
     - https
-  paths: 
-    /lotteries/{id}/trades: 
-      get: 
-        tags: 
+  paths:
+    /lotteries/{id}/trades:
+      get:
+        tags:
           - trades
         summary: Get lottery trades
         description: Get lottery trades
         operationId: getLotteryTradesCollection
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
           - application/vnd.receipts.v1+xml
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:trades:get
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
             required: true
-            default: 12
             type: string
-        responses: 
-          200: 
+        responses:
+          200:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/LotteryTradesCollectionResponse'
-    /lotteries/{id}/results: 
-      get: 
-        tags: 
+    /lotteries/{id}/results:
+      get:
+        tags:
           - results
         summary: Get lottery results
         description: Get lottery results
         operationId: getLotteryResultsCollection
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
           - application/vnd.receipts.v1+xml
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:results:get
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
-            default: 12
             required: true
             type: string
-        responses: 
-          200: 
+        responses:
+          200:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/LotteryResultsCollectionResponse'
-    /lotteries/{id}/tickets: 
-      get: 
-        tags: 
+    /lotteries/{id}/tickets:
+      get:
+        tags:
           - tickets
         summary: Find lottery tickets
         description: Get lottery tickets collection
         operationId: getLotteryTicketsCollection
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
           - application/vnd.receipts.v1+xml
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:tickets:get
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
-            default: 12
             required: true
             type: string
-          - 
+          -
             name: limit
             description: limit
             required: false
             type: integer
             in: query
             default: 100
-          - 
+          -
             name: offset
             description: offset
             required: false
             type: integer
             in: query
-            default: 0
-          - 
+          -
             name: sort
             description: sort
             required: false
             type: string
             in: query
-        responses: 
-          200: 
+        responses:
+          200:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/LotteryTicketsCollectionResponse'
-      post: 
-        tags: 
+      post:
+        tags:
           - tickets
         summary: Create lottery ticket
         description: Create lotteries ticket
         operationId: createLotteryTicket
-        consumes: 
+        consumes:
           - application/vnd.receipts.v1+json
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:tickets:create
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
-            default: 12
             required: true
             type: string
-          - 
+          -
             in: body
             name: ticketRequest
             description: Ticket request
             required: true
-            schema: 
+            schema:
               $ref: '#/definitions/TicketRequest'
-        responses: 
-          201: 
+        responses:
+          201:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/TicketResponse'
-          400: 
+          400:
             description: Bad request
-          401: 
+          401:
             description: Unauthorized
-          403: 
+          403:
             description: Forbidden
-          406: 
+          406:
             description: The request you made is not acceptable
-          422: 
+          422:
             description: Invalid parameter value
-    /lotteries/{id}/tickets/{ticketId}: 
-      get: 
-        tags: 
+    /lotteries/{id}/tickets/{ticketId}:
+      get:
+        tags:
           - tickets
         summary: Get lottery ticket by id
         description: Get lottery ticket by id
         operationId: getLotteryTicket
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
           - application/vnd.receipts.v1+xml
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:tickets:get
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
-            default: 12
             required: true
             type: string
-          - 
+          -
             name: ticketId
             in: path
             description: Ticket id
-            default: 122
             required: true
             type: string
-        responses: 
-          200: 
+        responses:
+          200:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/TicketDetailsResponse'
-      put: 
-        tags: 
+      put:
+        tags:
           - tickets
         summary: Update lottery ticket
         description: Update lotteries ticket
         operationId: updateLotteryTicket
-        consumes: 
+        consumes:
           - application/vnd.receipts.v1+json
-        produces: 
+        produces:
           - application/vnd.receipts.v1+json
-        security: 
-          - 
-            bearerToken: 
+        security:
+          -
+            bearerToken:
               - lotteries:tickets:update
-        parameters: 
-          - 
+        parameters:
+          -
             name: id
             in: path
             description: Lottery id
-            default: 12
             required: true
             type: string
-          - 
+          -
             name: ticketId
             in: path
             description: Ticket id
-            default: 122
             required: true
             type: string
-          - 
+          -
             in: body
             name: ticketRequest
             description: Ticket request
             required: true
-            schema: 
+            schema:
               $ref: '#/definitions/UpdateTicketRequest'
-        responses: 
-          200: 
+        responses:
+          200:
             description: successful operation
-            schema: 
+            schema:
               $ref: '#/definitions/TicketDetailsResponse'
-          400: 
+          400:
             description: Bad request
-          401: 
+          401:
             description: Unauthorized
-          403: 
+          403:
             description: Forbidden
-          406: 
+          406:
             description: The request you made is not acceptable
-          422: 
+          422:
             description: Invalid parameter value
-  securityDefinitions: 
-    bearerToken: 
+  securityDefinitions:
+    bearerToken:
       type: oauth2
       flow: implicit
       authorizationUrl: https://receipts.tech/oauth/authorization
-      scopes: 
+      scopes:
         lotteries:tickets:get: permission to get lottery tickets
         lotteries:tickets:create: permission to create lottery ticket
         lotteries:tickets:update: permission to update lottery ticket
         lotteries:trades:get: permission to get lottery trades
         lotteries:results:get: permission to get lottery results
-  definitions: 
-    AmountResponse: 
-      properties: 
-        currency: 
+  definitions:
+    AmountResponse:
+      properties:
+        currency:
           type: string
           description: amount currency
-        value: 
+        value:
           type: string
           description: amount value
-      required: 
+      required:
         - currency
         - value
-    AgreementsRequest: 
-      properties: 
-        termsOfService: 
+    AgreementsRequest:
+      properties:
+        termsOfService:
           type: boolean
           description: terms of service agreement
-        personalDataProcessing: 
+        personalDataProcessing:
           type: boolean
           description: personal data processing
-        useMyEffigy: 
+        useMyEffigy:
           type: boolean
           description: use my effigy
-      required: 
+      required:
         - termsOfService
         - personalDataProcessing
         - useMyEffigy
-    TicketDetailsResponse: 
-      properties: 
-        id: 
+    TicketDetailsResponse:
+      properties:
+        id:
           type: string
           description: Ticekt id
-        code: 
+        code:
           type: string
           description: ticket code number
-        purchaseOrderNumber: 
+        purchaseOrderNumber:
           type: string
           description: ticket purchase order number
-        amount: 
+        amount:
           $ref: '#/definitions/AmountResponse'
-        date: 
+        date:
           type: string
           description: ticket generate date
-        special: 
+        special:
           type: boolean
           description: is special ticket
-        pointOfSale: 
+        pointOfSale:
           type: string
           description: ticket point of sale
-        taxRegistrationNumber: 
+        taxRegistrationNumber:
           type: string
           description: ticket tax registration number
-        trade: 
+        trade:
           type: string
           description: Type of trade
           default: OTHER
-          enum: 
+          enum:
             - OTHER
             - HAIRDRESSING
             - VEHICLES
             - FOOD_AND_DRINKS
             - TAXI
             - PRIVATE_MEDIC_DENTAL
-      required: 
+      required:
         - id
         - purchaseOrderNumber
         - amount
@@ -331,101 +322,101 @@
         - pointOfSale
         - taxRegistrationNumber
         - trade
-    UpdateTicketRequest: 
-      properties: 
-        purchaseOrderNumber: 
+    UpdateTicketRequest:
+      properties:
+        purchaseOrderNumber:
           type: string
           description: ticket purchase order number
-        amount: 
+        amount:
           $ref: '#/definitions/AmountResponse'
-        date: 
+        date:
           type: string
           description: ticket generate date
-        pointOfSale: 
+        pointOfSale:
           type: string
           description: ticket point of sale
-        taxRegistrationNumber: 
+        taxRegistrationNumber:
           type: string
           description: ticket tax registration number
-        trade: 
+        trade:
           type: string
           description: Type of trade
           default: OTHER
-          enum: 
+          enum:
             - OTHER
             - HAIRDRESSING
             - VEHICLES
             - FOOD_AND_DRINKS
             - TAXI
             - PRIVATE_MEDIC_DENTAL
-      required: 
+      required:
         - purchaseOrderNumber
         - amount
         - date
         - pointOfSale
         - taxRegistrationNumber
         - trade
-    TicketResponse: 
-      properties: 
-        id: 
+    TicketResponse:
+      properties:
+        id:
           type: string
           description: Ticekt id
-        code: 
+        code:
           type: string
           description: ticket code number
-        purchaseOrderNumber: 
+        purchaseOrderNumber:
           type: string
           description: ticket purchase order number
-        amount: 
+        amount:
           $ref: '#/definitions/AmountResponse'
-        date: 
+        date:
           type: string
           description: ticket generate date
-        special: 
+        special:
           type: boolean
           description: is special ticket
-      required: 
+      required:
         - id
         - purchaseOrderNumber
         - amount
         - date
         - special
-    TicketRequest: 
-      properties: 
-        pointOfSale: 
+    TicketRequest:
+      properties:
+        pointOfSale:
           type: string
           description: ticket point of sale
-        purchaseOrderNumber: 
+        purchaseOrderNumber:
           type: string
           description: ticket purchase order number
-        amount: 
+        amount:
           $ref: '#/definitions/AmountResponse'
-        date: 
+        date:
           type: string
           description: ticket generate date
-        taxRegistrationNumber: 
+        taxRegistrationNumber:
           type: string
           description: ticket tax registration number
-        trade: 
+        trade:
           type: string
           description: Type of trade
           default: OTHER
-          enum: 
+          enum:
             - OTHER
             - HAIRDRESSING
             - VEHICLES
             - FOOD_AND_DRINKS
             - TAXI
             - PRIVATE_MEDIC_DENTAL
-        phone: 
+        phone:
           type: string
           description: user phone
-        agreements: 
+        agreements:
           $ref: '#/definitions/AgreementsRequest'
-        email: 
+        email:
           type: string
           description: user email
-      required: 
+      required:
         - pointOfSale
         - purchaseOrderNumber
         - amount
@@ -435,99 +426,99 @@
         - phone
         - agreements
         - email
-    LotteryTicketsCollectionResponse: 
-      properties: 
-        total: 
+    LotteryTicketsCollectionResponse:
+      properties:
+        total:
           type: integer
           description: Total lottery tickets
-        tickets: 
+        tickets:
           type: array
-          items: 
+          items:
             $ref: '#/definitions/TicketResponse'
       description: Lottery tickets collection
-      required: 
+      required:
         - total
         - tickets
-    TradeResponse: 
-      properties: 
-        id: 
+    TradeResponse:
+      properties:
+        id:
           type: string
           description: Trade id
-        name: 
+        name:
           type: string
           description: Trade name
       description: Lottery trade data
-      required: 
+      required:
         - id
         - name
-    LotteryTradesCollectionResponse: 
-      properties: 
-        total: 
+    LotteryTradesCollectionResponse:
+      properties:
+        total:
           type: integer
           description: Total lottery trades
-        trades: 
+        trades:
           type: array
-          items: 
+          items:
             $ref: '#/definitions/TradeResponse'
       description: Lottery trades collection
-      required: 
+      required:
         - total
         - trades
-    ResultPrizeWinnerResponse: 
-      properties: 
-        code: 
+    ResultPrizeWinnerResponse:
+      properties:
+        code:
           type: string
           description: Winner code
-      required: 
+      required:
         - code
-    ResultPrizeResponse: 
-      properties: 
-        name: 
+    ResultPrizeResponse:
+      properties:
+        name:
           type: string
           description: Prize name
-        winners: 
+        winners:
           type: array
-          items: 
+          items:
             $ref: '#/definitions/ResultPrizeWinnerResponse'
-      required: 
+      required:
         - name
         - winners
-    ResultResponse: 
-      properties: 
-        name: 
+    ResultResponse:
+      properties:
+        name:
           type: string
           description: Result name
-        date: 
+        date:
           type: string
           description: Result date
-        status: 
+        status:
           type: string
           description: Result status
           default: ACTIVE
-          enum: 
+          enum:
             - ACTIVE
             - PENDING
             - FINISHED
-        prizes: 
+        prizes:
           type: array
-          items: 
+          items:
             $ref: '#/definitions/ResultPrizeResponse'
       description: Lottery results data
-      required: 
+      required:
         - name
         - date
         - status
         - prizes
-    LotteryResultsCollectionResponse: 
-      properties: 
-        total: 
+    LotteryResultsCollectionResponse:
+      properties:
+        total:
           type: integer
           description: Total lottery results
-        results: 
+        results:
           type: array
-          items: 
+          items:
             $ref: '#/definitions/ResultResponse'
       description: Lottery results collection
-      required: 
+      required:
         - total
         - results
