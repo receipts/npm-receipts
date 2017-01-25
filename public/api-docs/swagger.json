@@ -49,7 +49,6 @@
             "in": "path",
             "description": "Lottery id",
             "required": true,
-            "default": "12",
             "type": "string"
           }
         ],
@@ -87,7 +86,6 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
-            "default": "12",
             "required": true,
             "type": "string"
           }
@@ -126,7 +124,6 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
-            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -143,8 +140,7 @@
             "description": "offset",
             "required": false,
             "type": "integer",
-            "in": "query",
-            "default": 0
+            "in": "query"
           },
           {
             "name": "sort",
@@ -188,7 +184,6 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
-            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -251,7 +246,6 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
-            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -259,7 +253,6 @@
             "name": "ticketId",
             "in": "path",
             "description": "Ticket id",
-            "default": "122",
             "required": true,
             "type": "string"
           }
@@ -298,7 +291,6 @@
             "name": "id",
             "in": "path",
             "description": "Lottery id",
-            "default": "12",
             "required": true,
             "type": "string"
           },
@@ -306,7 +298,6 @@
             "name": "ticketId",
             "in": "path",
             "description": "Ticket id",
-            "default": "122",
             "required": true,
             "type": "string"
           },
@@ -652,10 +643,20 @@
         "code": {
           "type": "string",
           "description": "Winner code"
+        },
+        "name": {
+          "type": "string",
+          "description": "Winner name"
+        },
+        "type": {
+          "type": "string",
+          "description": "Winner type"
         }
       },
       "required": [
-        "code"
+        "code",
+        "name",
+        "type"
       ]
     },
     "ResultPrizeResponse": {
