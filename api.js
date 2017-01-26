@@ -1,8 +1,8 @@
 'use strict';
 
 //require('newrelic');
-var app = require('./lib/app');
-var logger = require('./lib/logger/logger').logger;
+const app = require('./lib/app');
+const logger = require('./lib/logger/logger').logger;
 
 app.startServer((err, port) => {
 

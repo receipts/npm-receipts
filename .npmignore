@@ -10,6 +10,9 @@ test/
 *.ipr
 *.iws
 .idea
+node_modules
+circle.yml
+yarn.lock
 config/runtime.json
 config/runtimes.json
 config/test.json
