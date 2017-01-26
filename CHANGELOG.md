@@ -1,3 +1,6 @@
+1.6.0 / 2017-01-26
+  * es6 and updated CI
+
 0.1.9 / 2015-01-18
   * Merge pull request https://github.com/vehicle-history/npm-vehicle-history/issues/2 from
     vehicle-history/providers
