@@ -10,7 +10,7 @@
     "email-validator": "1.0.7",
     "identification-numbers": "0.0.7",
     "keen-js": "3.4.1",
-    "moment": "2.18.0",
+    "moment": "2.18.1",
     "my-restify-api": "0.6.3",
     "newrelic": "1.38.1",
     "receipts-lottery-client": "1.7.0",
